@@ -30,7 +30,7 @@ The first stage of the research ran all six baseline traders against one another
 
 ### Custom Trader Design
 
-The Custom Trader uses a ZIP style margin update rule controlled by a single learning rate parameter alpha, without the smoothing term used in ZIP. It supplements this with two inventory management mechanisms: a position limit L that applies a proportional bias to the margin once inventory exceeds half the limit, and a hard defensive mode above the full limit that reduces the trader's competitiveness until inventory returns to a safe range. A volatility threshold parameter sigma_v provides an independent route into defensive mode when recent price volatility, measured as the standard deviation of the 50 most recent transaction prices, exceeds the threshold.
+The Custom Trader uses a ZIP style margin update rule controlled by a single learning rate parameter $\alpha$, without the smoothing term used in ZIP. It supplements this with two inventory management mechanisms: a position limit $L$ that applies a proportional bias to the margin once inventory exceeds half the limit, and a hard defensive mode above the full limit that reduces the trader's competitiveness until inventory returns to a safe range. A volatility threshold parameter $\sigma_v$ provides an independent route into defensive mode when recent price volatility, measured as the standard deviation of the 50 most recent transaction prices, exceeds the threshold.
 
 ### Bayesian Optimisation
 
