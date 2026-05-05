@@ -1,0 +1,15 @@
+.DS_Store
+.ipynb_checkpoints
+__pycache__
+.venv/
+.claude/
+.vscode/
+*.pyc
+
+# Allow small data CSVs but exclude large timeseries files
+*.csv
+!data/bayesian_search_log.csv
+!data/optimal_parameters.csv
+!data/final_results.csv
+!data/preliminary_results.csv
+!data/summary_statistics.csv

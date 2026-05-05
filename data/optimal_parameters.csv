@@ -1,0 +1,2 @@
+beta,position_limit,volatility_threshold,expected_mean_profit,n_calls,n_initial_points,acquisition_fn,timestamp
+0.045223,294,14.98747,3776.4802,100,20,EI,2026-04-21 16:43:01
