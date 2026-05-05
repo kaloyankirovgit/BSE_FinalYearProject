@@ -16,7 +16,7 @@ The Bristol Stock Exchange is an open source Python framework developed by Profe
 
 The standard BSE profit definition treats profit as the margin captured on each individual trade and assumes fixed buyer and seller roles throughout a session. This project introduces a modified profit measure that accounts for the full mark to market value of a trader's position at each time step:
 
-$$P = C_f + (I * SP) - C_0$$
+$$P = C_f + (I \times SP) - C_0$$
 
 where $C_f$ is the trader's final cash balance, $I$ is their inventory (shares held), $SP$ is the mean price of the most recent 50 transactions, and $C_0$ is the initial cash balance of 10,000. This formulation means that accumulating a large unclosed inventory position at session end directly reduces profit, making inventory management a meaningful design objective.
 
@@ -34,7 +34,7 @@ The Custom Trader uses a ZIP style margin update rule controlled by a single lea
 
 ### Bayesian Optimisation
 
-The three parameters $\alpha$, $L$, and $sigma_v$ were tuned using Bayesian optimisation with a Gaussian Process surrogate model and Expected Improvement as the acquisition function, implemented via the Scikit Optimize library. The search ran for 100 iterations over the parameter space $\alpha$ in [0.001, 0.30], $L$ in [20, 800], and $sigma_v$ in [3.0, 15.0], with 20 random initial evaluations before the GP began guiding the search. Each evaluation simulated 10 sessions per market condition and recorded the mean profit of the Custom Trader across those sessions.
+The three parameters $\alpha$, $L$, and $\sigma_v$ were tuned using Bayesian optimisation with a Gaussian Process surrogate model and Expected Improvement as the acquisition function, implemented via the Scikit Optimize library. The search ran for 100 iterations over the parameter space $\alpha$ in [0.001, 0.30], $L$ in [20, 800], and $\sigma_v$ in [3.0, 15.0], with 20 random initial evaluations before the GP began guiding the search. Each evaluation simulated 10 sessions per market condition and recorded the mean profit of the Custom Trader across those sessions.
 
 ### Main Simulation
 
